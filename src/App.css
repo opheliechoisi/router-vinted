@@ -1,0 +1,24 @@
+/* SIGNUP */
+.signup {
+  display: flex;
+  flex-direction: column;
+  width: 50vw;
+  margin: 0 auto;
+  height: 70vh;
+  gap: 20px;
+  align-items: center;
+}
+.signup input {
+  width: 50%;
+}
+
+/* LOGIN */
+.login {
+  display: flex;
+  flex-direction: column;
+  width: 50vw;
+  height: 50vw;
+  margin: 0 auto;
+  gap: 20px;
+  align-items: center;
+}
