@@ -1,12 +1,12 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 
 const Offer = () => {
   const [data, setData] = useState({});
   const [isLoading, setIsLoading] = useState(true);
   const { id } = useParams();
-  console.log(id);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const fetchData = async () => {
@@ -22,15 +22,23 @@ const Offer = () => {
     };
     fetchData();
   }, [id]);
+
+  const handleBuy = () => {
+    navigate("/payment", {
+      state: {
+        title: data.product_name,
+        price: data.product_price,
+      },
+    });
+  };
+
   return isLoading ? (
-    <p>En cours de chergement...</p>
+    <p>En cours de chargement...</p>
   ) : (
     <div>
       <h2>{data.product_name}</h2>
       {data.product_details.map((detail, index) => {
         const keyName = Object.keys(detail);
-        console.log(keyName[0]);
-
         return (
           <div key={index}>
             <span>{keyName[0]}</span>
@@ -38,6 +46,7 @@ const Offer = () => {
           </div>
         );
       })}
+      <button onClick={handleBuy}>Acheter</button>
     </div>
   );
 };

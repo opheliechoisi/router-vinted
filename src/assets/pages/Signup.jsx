@@ -30,7 +30,7 @@ const Signup = ({ handleToken }) => {
     }
   };
   return (
-    <form className="signup" onSubmit={handleSubmit}>
+    <form className="signup-container" onSubmit={handleSubmit}>
       <h1>S'inscrire</h1>
       <input
         placeholder="username"

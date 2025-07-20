@@ -1,5 +1,5 @@
 /* SIGNUP */
-.signup {
+.signup-container {
   display: flex;
   flex-direction: column;
   width: 50vw;
@@ -8,8 +8,18 @@
   gap: 20px;
   align-items: center;
 }
-.signup input {
+.signup-container input {
   width: 50%;
+}
+
+.file-container {
+  width: 200px;
+  height: 90px;
+  border: solid green 2px;
+}
+
+.file-container input {
+  display: none;
 }
 
 /* LOGIN */
